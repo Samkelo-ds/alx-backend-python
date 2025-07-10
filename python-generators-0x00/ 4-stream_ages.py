@@ -7,8 +7,8 @@ def stream_user_ages():
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',
-            password='password',
+            user='root',           # Replace if needed
+            password='password',   # Replace if needed
             database='ALX_prodev'
         )
         cursor = connection.cursor()
@@ -20,19 +20,5 @@ def stream_user_ages():
         cursor.close()
         connection.close()
     except Error as e:
-        print(f"Error accessing database: {e}")
-
-
-def compute_average_age():
-    """Calculate average age using stream_user_ages generator."""
-    total = 0
-    count = 0
-    for age in stream_user_ages():
-        total += age
-        count += 1
-
-    if count > 0:
-        average = total / count
-        print(f"Average age of users: {average:.2f}")
-    else:
-        print("No users found.")
+        print(f"Error: {e}")
+        
