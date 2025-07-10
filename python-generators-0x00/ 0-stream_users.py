@@ -21,3 +21,4 @@ def stream_users():
         connection.close()
     except Error as e:
         print(f"Error streaming users: {e}")
+        
