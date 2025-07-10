@@ -11,3 +11,4 @@ This project sets up a MySQL database (`ALX_prodev`) and populates a `user_data`
 1. Install MySQL and `mysql-connector-python`.
 2. Update MySQL credentials in `seed.py`.
 3. Run `0-main.py` to initialize the DB.
+test
