@@ -77,4 +77,3 @@ def insert_data(connection, csv_file):
         print(f"Error inserting data: {e}")
     except FileNotFoundError:
         print(f"File {csv_file} not found.")
-#test
