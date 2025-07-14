@@ -2,7 +2,7 @@ import time
 import sqlite3 
 import functools
 
-# ✅ Decorator to handle DB connection
+# ✅ Decorator to manage DB connection
 def with_db_connection(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
@@ -14,7 +14,7 @@ def with_db_connection(func):
     return wrapper
 
 # ✅ Decorator to retry on failure
-def retry_on_failure(retries=3, delay=1):
+def retry_on_failure(retries=3, delay=2):
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
@@ -32,12 +32,13 @@ def retry_on_failure(retries=3, delay=1):
     return decorator
 
 @with_db_connection
-@retry_on_failure(retries=3, delay=1)
+@retry_on_failure(retries=3, delay=2)
 def fetch_users_with_retry(conn):
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users")
     return cursor.fetchall()
 
-# ✅ Attempt to fetch users with automatic retry on failure
+# ✅ Attempt to fetch users with automatic retry
 users = fetch_users_with_retry()
 print(users)
+
