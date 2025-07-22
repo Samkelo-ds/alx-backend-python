@@ -25,4 +25,5 @@ class TestMemoize(unittest.TestCase):
             first = instance.a_property
             second = instance.a_property
             self.assertEqual(first, 42)
-            self.assertEqual(second, 42) 
+            self.assertEqual(second, 42)
+            
