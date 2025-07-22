@@ -5,6 +5,19 @@ from parameterized import parameterized
 
 from client import GithubOrgClient  # Adjust import path as per your project structure
 
+class TestAccessNestedMap(unittest.TestCase):
+    """Test the access_nested_map function."""
+
+    @parameterized.expand([
+        ({"a": {"b": 1}}, ("a", "b"), 1),
+        ({"a": {"b": 2}}, ("a", "b"), 2),
+        ({"a": {"b": {"c": 3}}}, ("a", "b", "c"), 3),
+    ])
+    def test_access_nested_map(self, nested_map, path, expected):
+        """Test that access_nested_map returns the expected value."""
+        from utils import access_nested_map  # Adjust import path as per your project structure
+        self.assertEqual(access_nested_map(nested_map, path), expected)
+ 
 
 class TestGithubOrgClient(unittest.TestCase):
     """Test the GithubOrgClient class."""
