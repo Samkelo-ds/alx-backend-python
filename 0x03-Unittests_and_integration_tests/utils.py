@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Utilities Module"""
-
+"""
+utils.py
+"""
 
 def access_nested_map(nested_map, path):
-    """Access value in nested map using path tuple."""
+    """
+    Access a nested map with a sequence of keys.
+    """
     for key in path:
-        if not isinstance(nested_map, dict):
-            raise KeyError(key)
         nested_map = nested_map[key]
     return nested_map
