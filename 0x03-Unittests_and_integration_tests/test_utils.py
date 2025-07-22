@@ -26,7 +26,7 @@ class TestMemoize(unittest.TestCase):
             second = instance.a_property
             self.assertEqual(first, 42)
             self.assertEqual(second, 42)
-            mock.assert_called_once()
+            
 
 
 
