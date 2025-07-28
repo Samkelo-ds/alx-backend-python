@@ -123,3 +123,4 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 #["rest_framework_simplejwt", "DEFAULT_AUTHENTICATION_CLASSES"]
 #["DEFAULT_AUTHENTICATION_CLASSES", "rest_framework.authentication.BasicAuthentication", "rest_framework.authentication.SessionAuthentication"]
+#["PAGE_SIZE", "20", "DEFAULT_PAGINATION_CLASS", "PageNumberPagination"]
