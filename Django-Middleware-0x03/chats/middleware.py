@@ -71,6 +71,17 @@ class RolePermissionMiddleware:
         if any(path in request.path for path in restricted_paths):
             if not request.user.is_authenticated or request.user.role not in ['admin', 'moderator']:
                 return HttpResponseForbidden("You do not have permission to perform this action.")
-        return self.get_response(request)
+        return self.get_response(request) 
+  class RequestLoggingMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        # Log the request path to requests.log
+        with open('Django-Middleware-0x03/chats/requests.log', 'a') as f:
+            f.write(f"{request.method} {request.path}\n")
+        response = self.get_response(request)
+        return response    
+["class RolepermissionMiddleware"]          
       
   

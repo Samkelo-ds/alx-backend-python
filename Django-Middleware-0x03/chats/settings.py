@@ -137,3 +137,4 @@ MIDDLEWARE += [
 MIDDLEWARE += [
     'chats.middleware.RolePermissionMiddleware',
 ]
+["chats.middleware.RolepermissionMiddleware"]
