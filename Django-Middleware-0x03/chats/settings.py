@@ -48,6 +48,12 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    # Custom Middleware
+    "chats.middleware.RequestLoggingMiddleware",
+    "chats.middleware.RestrictAccessByTimeMiddleware",
+    "chats.middleware.OffensiveLanguageMiddleware",
+    "chats.middleware.RolepermissionMiddleware",
 ]
 
 ROOT_URLCONF = "messaging_app.urls"
@@ -121,22 +127,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-#["rest_framework_simplejwt", "DEFAULT_AUTHENTICATION_CLASSES"]
-#["DEFAULT_AUTHENTICATION_CLASSES", "rest_framework.authentication.BasicAuthentication", "rest_framework.authentication.SessionAuthentication"]
-#["PAGE_SIZE", "20", "DEFAULT_PAGINATION_CLASS", "PageNumberPagination"]
-#MIDDLEWARE = [
-    ...,
-    'chats.middleware.RequestLoggingMiddleware',
-]
-MIDDLEWARE += [
-    'chats.middleware.RestrictAccessByTimeMiddleware',
-]
-MIDDLEWARE += [
-    'chats.middleware.OffensiveLanguageMiddleware',
-]
-MIDDLEWARE += [
-    'chats.middleware.RolePermissionMiddleware',
-]
-["chats.middleware.RolepermissionMiddleware"],
-["chats.middleware.RolepermissionMiddleware"],
-# ["chats.middleware.RolepermissionMiddleware"]
